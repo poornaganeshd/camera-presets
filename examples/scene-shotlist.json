@@ -1,0 +1,86 @@
+{
+  "fps": 60,
+  "resolution": [1080, 1920],
+  "durationInFrames": 450,
+  "shots": [
+    {
+      "id": "shot_01_establish",
+      "preset": "parallax-slide",
+      "startFrame": 0,
+      "durationInFrames": 180,
+      "params": {
+        "startX": -1.8,
+        "endX": 1.8,
+        "startZ": 10,
+        "baseFov": 42
+      }
+    },
+    {
+      "id": "shot_02_inspection_stare",
+      "preset": "tension-push",
+      "startFrame": 180,
+      "durationInFrames": 150,
+      "params": {
+        "startZ": 9.5,
+        "endZ": 6.2,
+        "baseFov": 38
+      }
+    },
+    {
+      "id": "shot_03_neighbor_reaction",
+      "preset": "whip-pan-snap",
+      "startFrame": 330,
+      "durationInFrames": 120,
+      "params": {
+        "startX": 0,
+        "endX": 5.5,
+        "whipTriggerFrame": 30,
+        "baseFov": 40
+      }
+    }
+  ],
+  "layers": [
+    {
+      "id": "sky",
+      "textureUrl": "art/suburban/sky.png",
+      "depthBucket": "BG_SKY",
+      "position": [0, 4],
+      "baseHeight": 12,
+      "anchorBottom": false
+    },
+    {
+      "id": "horizon",
+      "textureUrl": "art/suburban/horizon.png",
+      "depthBucket": "BG_NEAR",
+      "position": [0, 0],
+      "baseHeight": 6
+    },
+    {
+      "id": "house",
+      "textureUrl": "art/suburban/house.png",
+      "depthBucket": "MID_ENV",
+      "position": [-1.2, 0],
+      "baseHeight": 3.5
+    },
+    {
+      "id": "inspector",
+      "textureUrl": "art/suburban/char_inspector.png",
+      "depthBucket": "MID_SUBJECT",
+      "position": [0.4, 0],
+      "baseHeight": 2.1,
+      "idleBob": {
+        "enabled": true,
+        "amplitudeY": 0.012,
+        "frequencyHz": 1.2
+      }
+    },
+    {
+      "id": "fence",
+      "textureUrl": "art/suburban/fence.png",
+      "depthBucket": "FG_EXTREME",
+      "position": [0, 0],
+      "baseHeight": 1.4,
+      "opacity": 0.95
+    }
+  ]
+}

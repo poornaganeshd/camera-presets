@@ -9,9 +9,13 @@ Built for a rigid, paper-cutout diorama look: uncomfortable stillness, mechanica
 | Path | Description |
 |------|-------------|
 | [`src/camera/cameraPresets.ts`](src/camera/cameraPresets.ts) | Pure TypeScript camera evaluator: 6 named presets, easing, gate-weave, vertigo math |
+| [`src/camera/KnoxCameraRig.tsx`](src/camera/KnoxCameraRig.tsx) | Two-node R3F + Remotion camera hierarchy driven by `evaluateCameraRig` |
 | [`src/camera/ParallaxStage25D.tsx`](src/camera/ParallaxStage25D.tsx) | Remotion + R3F component that loads PNG cutouts onto 5 Z-buckets with frustum compensation |
+| [`src/camera/SuburbanSceneComposition.tsx`](src/camera/SuburbanSceneComposition.tsx) | Drop-in Remotion composition wiring camera + stage from JSON |
+| [`src/camera/index.ts`](src/camera/index.ts) | Barrel exports |
 | [`docs/2.5d-deadpan-uncanny-cinema-spec.md`](docs/2.5d-deadpan-uncanny-cinema-spec.md) | Full architectural & visual-grammar specification |
-| [`examples/scene-timeline.json`](examples/scene-timeline.json) | Declarative shot list you can drive from a composition |
+| [`examples/scene-timeline.json`](examples/scene-timeline.json) | Shots-only timeline |
+| [`examples/scene-shotlist.json`](examples/scene-shotlist.json) | Shots **+** layers for `SuburbanSceneComposition` |
 
 ## Camera presets (visual grammar)
 
@@ -31,67 +35,54 @@ Do **not** animate `THREE.PerspectiveCamera` in world space directly:
 1. **`CameraTrackNode`** (`THREE.Group`) — world X/Y/Z + look-at  
 2. **`CameraBodyNode`** (`THREE.PerspectiveCamera`, child) — FOV, Dutch roll, micro-jitter  
 
-`evaluateCameraRig()` returns `{ position, lookAt, fov, rollRad }` for you to apply to that hierarchy.
+`KnoxCameraRig` implements this hierarchy and applies `evaluateCameraRig()` every frame.
 
-## 5-plane Z-depth buckets
-
-Assets live on discrete Z planes. Frustum compensation keeps apparent size stable when the camera moves:
-
-```ts
-S = (Z_cam - Z_layer) / (Z_cam - Z_ref)
-```
-
-See the [spec](docs/2.5d-deadpan-uncanny-cinema-spec.md) for default bucket coordinates and overscan margins.  
-`ParallaxStage25D` ships its own bucket table (`FG_EXTREME` … `BG_SKY`) tuned for a reference camera at Z ≈ 5.
-
-## Quick start (Remotion + R3F)
-
-```ts
-import { evaluateCameraRig, type CameraShotConfig } from './camera/cameraPresets';
-import { ParallaxStage25D } from './camera/ParallaxStage25D';
-
-// Inside a Remotion frame:
-const config: CameraShotConfig = {
-  preset: 'tension-push',
-  startFrame: 0,
-  durationInFrames: 150,
-  params: { startZ: 10, endZ: 6.5, baseFov: 40 },
-};
-
-const state = evaluateCameraRig(frame, config);
-// Apply state.position / state.lookAt / state.fov / state.rollRad to your two-node rig
-```
+## Quick start (Remotion)
 
 ```tsx
-<ParallaxStage25D
-  layers={[
-    {
-      id: 'hero',
-      textureUrl: 'art/char.png',
-      depthBucket: 'MID_SUBJECT',
-      position: [0, 0],
-      baseHeight: 2.2,
-      idleBob: { enabled: true },
-    },
-    // … more layers
-  ]}
-/>
+import { SuburbanSceneComposition } from './camera/SuburbanSceneComposition';
+
+// Register in Root.tsx / composition registry:
+// <Composition id="SuburbanScene" component={SuburbanSceneComposition} ... />
+```
+
+Or wire pieces yourself:
+
+```tsx
+import { ThreeCanvas } from '@remotion/three';
+import { KnoxCameraRig } from './camera/KnoxCameraRig';
+import { ParallaxStage25D } from './camera/ParallaxStage25D';
+import sceneData from '../examples/scene-shotlist.json';
+
+<ThreeCanvas width={width} height={height}>
+  <color attach="background" args={['#d8d2c5']} />
+  <KnoxCameraRig shots={sceneData.shots}>
+    <ParallaxStage25D layers={sceneData.layers} referenceCameraZ={5} />
+  </KnoxCameraRig>
+</ThreeCanvas>
 ```
 
 ### Peer dependencies
 
-These modules expect (not yet declared in this workspace’s root `package.json`):
+These modules expect:
 
 - `three`
 - `@react-three/fiber`
-- `remotion` (for `ParallaxStage25D`)
+- `remotion`
+- `@remotion/three`
 
-Install them in a Remotion project that consumes this code, or add them to this repo if you wire the stage into the existing app.
+Install them in a Remotion project that consumes this code:
+
+```bash
+npm install three @react-three/fiber remotion @remotion/three
+```
+
+Place PNG cutouts under `public/art/...` (paths in `scene-shotlist.json` are relative to `public/` via Remotion `staticFile`).
 
 ## Spec & timeline
 
 - Full design doc: [docs/2.5d-deadpan-uncanny-cinema-spec.md](docs/2.5d-deadpan-uncanny-cinema-spec.md)  
-- Example shot list: [examples/scene-timeline.json](examples/scene-timeline.json)
+- Example shot + layer list: [examples/scene-shotlist.json](examples/scene-shotlist.json)
 
 ## License
 

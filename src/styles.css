@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #1a1612;
+  --color-fg: #f3ecdf;
+  --color-muted: #b7ab9a;
+  --color-line: #3a322a;
+  --color-accent: #e7d7b1;
+  --color-accent-ink: #1a1612;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  a.download {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+}
+
+.stage {
+  box-sizing: border-box;
+  min-height: 100vh;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 8vw, 4.2rem);
+  font-weight: 520;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.lede {
+  margin: 1.25rem 0 0;
+  max-width: 34rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+.download {
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  min-height: 3.25rem;
+  padding: 0 1.35rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.download:hover {
+  filter: brightness(1.06);
+}
+
+.download:focus-visible,
+.direct:focus-visible {
+  outline: 2px solid var(--color-fg);
+  outline-offset: 3px;
+}
+
+.status {
+  min-height: 1.4rem;
+  margin: 0.75rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--color-fg);
+}
+
+.direct {
+  display: inline-block;
+  margin-top: 0.15rem;
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.cards {
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cards li {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: 0.9rem;
+}
+
+.cards .id {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.cards strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 520;
+}
+
+.cards .meta {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.cards p {
+  margin: 0.4rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: var(--color-fg);
+}

@@ -1,0 +1,314 @@
+{
+  "label": "FICTION. Camera demo only. Do not publish as history or as a true story.",
+  "format": {
+    "w": 1080,
+    "h": 1920,
+    "fps": 30
+  },
+  "sets": [
+    "bakery-dawn",
+    "market-stall",
+    "guild-table"
+  ],
+  "prop": "a single knife-notch in the heel of a loaf",
+  "line": "The town taxed bread by the cut slice. A notch was how a loaf admitted it had been opened. A second notch dried a different color, and that color was the lie.",
+  "shots": [
+    {
+      "id": "s01",
+      "preset": "prop-macro",
+      "modifier": "none",
+      "frames": 40,
+      "set": "bakery-dawn",
+      "focus": "the pale notch in the crust",
+      "action": "The notch fills the frame, then the loaf eases back onto a floured board."
+    },
+    {
+      "id": "s02",
+      "preset": "consequence-pull",
+      "modifier": "none",
+      "frames": 54,
+      "set": "bakery-dawn",
+      "focus": "loaf, then the whole bench",
+      "action": "Oven, bench, and a waiting crate open up behind one loaf."
+    },
+    {
+      "id": "s03",
+      "preset": "boot-crane",
+      "modifier": "none",
+      "frames": 48,
+      "set": "bakery-dawn",
+      "focus": "feet, then eyes",
+      "action": "The baker steps in. Camera rises from floury shoes to the face."
+    },
+    {
+      "id": "s04",
+      "preset": "parallax-slider",
+      "modifier": "none",
+      "frames": 60,
+      "set": "bakery-dawn",
+      "focus": "the bench",
+      "action": "A flour sack in the foreground crosses as the line names the tax."
+    },
+    {
+      "id": "s05",
+      "preset": "quiet-push",
+      "modifier": "none",
+      "frames": 66,
+      "set": "bakery-dawn",
+      "focus": "eyes",
+      "action": "Sliced bread is taxed. A whole loaf is not."
+    },
+    {
+      "id": "s06",
+      "preset": "hand-track",
+      "modifier": "none",
+      "frames": 48,
+      "set": "bakery-dawn",
+      "focus": "knife and the heel of the loaf",
+      "action": "One notch, cut, and the hand stops."
+    },
+    {
+      "id": "s07",
+      "preset": "snap-inset",
+      "modifier": "none",
+      "frames": 28,
+      "set": "bakery-dawn",
+      "focus": "a pale fresh cut",
+      "action": "The crumb at the notch is still soft."
+    },
+    {
+      "id": "s08",
+      "preset": "quiet-push",
+      "modifier": "none",
+      "frames": 66,
+      "set": "bakery-dawn",
+      "focus": "loaf in the baker's hands",
+      "action": "An honest loaf is one notch. Said too early, on purpose."
+    },
+    {
+      "id": "s09",
+      "preset": "parallax-slider",
+      "modifier": "none",
+      "frames": 60,
+      "set": "bakery-dawn",
+      "focus": "loaves on the peel",
+      "action": "The peel crosses frame. Every loaf on it carries a single notch."
+    },
+    {
+      "id": "s10",
+      "preset": "arch-pass",
+      "modifier": "none",
+      "frames": 50,
+      "set": "market-stall",
+      "focus": "rack from the doorpost to the stall",
+      "action": "Through the shop door into the morning market."
+    },
+    {
+      "id": "s11",
+      "preset": "parallax-slider",
+      "modifier": "none",
+      "frames": 60,
+      "set": "market-stall",
+      "focus": "two loaves",
+      "action": "A post crosses. One loaf has one notch. The next has two."
+    },
+    {
+      "id": "s12",
+      "preset": "quiet-push",
+      "modifier": "none",
+      "frames": 66,
+      "set": "market-stall",
+      "focus": "the twice-cut loaf",
+      "action": "A buyer treats the second notch as a baker's mark, not a lie."
+    },
+    {
+      "id": "s13",
+      "preset": "hand-track",
+      "modifier": "impact-lock",
+      "frames": 48,
+      "set": "market-stall",
+      "focus": "knife entering the crust",
+      "action": "Someone adds a second notch at the stall. The camera stops on the cut."
+    },
+    {
+      "id": "s14",
+      "preset": "snap-inset",
+      "modifier": "none",
+      "frames": 28,
+      "set": "market-stall",
+      "focus": "two cuts, two colors",
+      "action": "The new cut is pale. The older one has dried darker."
+    },
+    {
+      "id": "s15",
+      "preset": "occluder-clear",
+      "modifier": "none",
+      "frames": 42,
+      "set": "market-stall",
+      "focus": "a watching face behind a loaf",
+      "action": "A loaf in front clears off a face that has already understood."
+    },
+    {
+      "id": "s16",
+      "preset": "quiet-push",
+      "modifier": "none",
+      "frames": 66,
+      "set": "market-stall",
+      "focus": "that face",
+      "action": "They don't speak. The color is the evidence."
+    },
+    {
+      "id": "s17",
+      "preset": "boot-crane",
+      "modifier": "none",
+      "frames": 48,
+      "set": "market-stall",
+      "focus": "boots in market mud, then the face",
+      "action": "The watcher stands. We rise with them."
+    },
+    {
+      "id": "s18",
+      "preset": "quiet-push",
+      "modifier": "none",
+      "frames": 66,
+      "set": "market-stall",
+      "focus": "the twice-cut loaf, held out",
+      "action": "The loaf is the accusation. No new prop."
+    },
+    {
+      "id": "s19",
+      "preset": "arch-pass",
+      "modifier": "none",
+      "frames": 50,
+      "set": "guild-table",
+      "focus": "rack from a doorframe to a table",
+      "action": "Into the guild room. Same morning, harder light."
+    },
+    {
+      "id": "s20",
+      "preset": "overhead-settle",
+      "modifier": "none",
+      "frames": 54,
+      "set": "guild-table",
+      "focus": "deep, ledger and loaf",
+      "action": "A top-down ledger tilts into a room with the loaf on it."
+    },
+    {
+      "id": "s21",
+      "preset": "quiet-push",
+      "modifier": "none",
+      "frames": 66,
+      "set": "guild-table",
+      "focus": "inspector's hands on the page",
+      "action": "The count is by the slice. The page has no column for color."
+    },
+    {
+      "id": "s22",
+      "preset": "parallax-slider",
+      "modifier": "none",
+      "frames": 60,
+      "set": "guild-table",
+      "focus": "baker on one side, inspector on the other",
+      "action": "The table edge crosses as we slide from one seat to the other."
+    },
+    {
+      "id": "s23",
+      "preset": "quiet-push",
+      "modifier": "impact-lock",
+      "frames": 66,
+      "set": "guild-table",
+      "focus": "loaf set down on wood",
+      "action": "The loaf lands. Camera velocity dies on the thud."
+    },
+    {
+      "id": "s24",
+      "preset": "rival-whip",
+      "modifier": "none",
+      "frames": 8,
+      "set": "guild-table",
+      "focus": "matched both sides",
+      "action": "Eight blur frames from inspector to baker. Same room."
+    },
+    {
+      "id": "s25",
+      "preset": "quiet-push",
+      "modifier": "none",
+      "frames": 66,
+      "set": "guild-table",
+      "focus": "baker",
+      "action": "The baker says nothing. The loaf stays in frame."
+    },
+    {
+      "id": "s26",
+      "preset": "table-arc-22",
+      "modifier": "none",
+      "frames": 72,
+      "set": "guild-table",
+      "focus": "both notches",
+      "action": "Twenty-two degrees around the loaf. No face on the far side of the turn."
+    },
+    {
+      "id": "s27",
+      "preset": "hand-track",
+      "modifier": "none",
+      "frames": 48,
+      "set": "guild-table",
+      "focus": "a finger on the darker notch",
+      "action": "A finger finds the dried cut and stops."
+    },
+    {
+      "id": "s28",
+      "preset": "snap-inset",
+      "modifier": "none",
+      "frames": 28,
+      "set": "guild-table",
+      "focus": "the darker crumb",
+      "action": "Third and last punch. The lie is a color, not a shape."
+    },
+    {
+      "id": "s29",
+      "preset": "quiet-push",
+      "modifier": "none",
+      "frames": 66,
+      "set": "guild-table",
+      "focus": "both people, loaf between",
+      "action": "The rule finally fits the object."
+    },
+    {
+      "id": "s30",
+      "preset": "occluder-clear",
+      "modifier": "none",
+      "frames": 42,
+      "set": "guild-table",
+      "focus": "the notch, revealed past a ledger",
+      "action": "The standing ledger slides off the heel of the loaf."
+    },
+    {
+      "id": "s31",
+      "preset": "quiet-push",
+      "modifier": "none",
+      "frames": 66,
+      "set": "guild-table",
+      "focus": "the single idea, held",
+      "action": "Hold the explanation. Do not add a fact."
+    },
+    {
+      "id": "s32",
+      "preset": "consequence-pull",
+      "modifier": "none",
+      "frames": 54,
+      "set": "bakery-dawn",
+      "focus": "one loaf, then the oven behind it",
+      "action": "Back in the bakery. The notch stays low in frame while the oven returns."
+    },
+    {
+      "id": "s33",
+      "preset": "answer-drift",
+      "modifier": "none",
+      "frames": 75,
+      "set": "bakery-dawn",
+      "focus": "the single honest notch",
+      "action": "Almost still. One notch. No new fact."
+    }
+  ]
+}
